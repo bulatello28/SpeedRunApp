@@ -1,0 +1,114 @@
+﻿<Window x:Class="SpeedRunApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SpeedRunApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#343638"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="Height" Value="40"></Setter>
+            <Setter Property="BorderBrush" Value="White"></Setter>
+            <Setter Property="BorderThickness" Value="2"></Setter>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
+            <Setter Property="FontSize" Value="16"></Setter>
+        </Style>
+    </Window.Resources>
+    <TabControl x:Name="pages">
+        <TabItem x:Name="file" Header="File"></TabItem>
+        <TabItem x:Name="notifications" Header="Notifications"></TabItem>
+        <TabItem x:Name="status" Header="Status"></TabItem>
+        <TabItem x:Name="view" Header="View"></TabItem>
+        <TabItem x:Name="customer" Header="Customer">
+            <TabItem.Content>
+                <TabControl x:Name="customerPages">
+                    <TabItem x:Name="customerSearch">
+                        <TabItem.Header>
+                            <StackPanel>
+                                <TextBlock>Search customer</TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                    </TabItem>
+                    <TabItem x:Name="customerEdit">
+                        <TabItem.Header>
+                            <StackPanel>
+                                <TextBlock>Edit customer</TextBlock>
+                            </StackPanel>
+                        </TabItem.Header>
+                        <TabItem.Content>
+                            <Grid Background="Black">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="10*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <StackPanel Background="Gray" Grid.Row="0" Orientation="Horizontal">
+                                    <Button Width="80">Save Data</Button>
+                                    <TextBlock Width="20"></TextBlock>
+                                    <Button Width="80">Close</Button>
+                                    <TextBlock Width="20"></TextBlock>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                            <ColumnDefinition></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel>
+                                            <TextBlock Foreground="White">First Name:</TextBlock>
+                                            <TextBlock></TextBlock>
+                                            <TextBlock Foreground="White">Last Name:</TextBlock>
+                                            <TextBlock></TextBlock>
+                                            <TextBlock Foreground="White">Company Name:</TextBlock>
+                                            <TextBlock></TextBlock>
+                                            <TextBlock Foreground="White">Devision:</TextBlock>
+                                            <TextBlock></TextBlock>
+                                            <TextBlock Foreground="White">Phone Numbers</TextBlock>
+                                            <TextBlock></TextBlock>
+                                            <TextBlock Foreground="White">Phone:</TextBlock>
+                                            <TextBlock></TextBlock>
+                                            <TextBlock Foreground="White">Fax:</TextBlock>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="1">
+                                            <TextBox></TextBox>
+                                            <TextBlock></TextBlock>
+                                            <TextBox></TextBox>
+                                            <TextBlock></TextBlock>
+                                            <TextBox></TextBox>
+                                            <TextBlock></TextBlock>
+                                            <TextBox></TextBox>
+                                            <TextBlock></TextBlock>
+                                            <TextBox></TextBox>
+                                            <TextBlock></TextBlock>
+                                            <TextBox></TextBox>
+                                        </StackPanel>
+                                        <StackPanel Grid.Column="2">
+                                            <TextBlock Foreground="White">BirthDay</TextBlock>
+                                            <DatePicker></DatePicker>
+                                        </StackPanel>
+                                        
+                                    </Grid>
+                                </StackPanel>
+                            </Grid>
+                        </TabItem.Content>
+                    </TabItem>
+                </TabControl>
+            </TabItem.Content>
+        </TabItem>
+    </TabControl>
+</Window>
